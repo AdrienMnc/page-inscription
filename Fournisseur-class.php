@@ -1,23 +1,19 @@
 <?php
 
-class Fournisseur
+require_once __DIR__ . "/Vendeur-class.php";
+
+class Fournisseur extends Vendeur
 {
-    public string $nom;
-    public string $email;
-    public string $password;
-    public string $adresse;
-    public string $sasSarl;
-    public int $siret;
+
+
     public int $agrement;
 
     public function __construct(string $nom, string $email, string $password, string $adresse, string $sasSarl, int $siret, int $agrement)
     {
-        $this->nom = $nom;
-        $this->email = $email;
-        $this->password = $password;
-        $this->adresse = $adresse;
-        $this->sasSarl = $sasSarl;
-        $this->siret = $siret;
+
+        parent::__construct($nom, $email, $password, $adresse, $sasSarl, $siret);
+
+
         $this->agrement = $agrement;
     }
 }

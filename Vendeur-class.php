@@ -1,20 +1,19 @@
 <?php
 
-class Vendeur
+require_once __DIR__ . "/Client-class.php";
+
+class Vendeur extends Client
 {
-    public string $nom;
-    public string $email;
-    public string $password;
-    public string $adresse;
+
     public string $sasSarl;
     public int $siret;
 
+
     public function __construct(string $nom, string $email, string $password, string $adresse, string $sasSarl, int $siret)
     {
-        $this->nom = $nom;
-        $this->email = $email;
-        $this->password = $password;
-        $this->adresse = $adresse;
+
+        parent::__construct($nom, $email, $password, $adresse);
+
         $this->sasSarl = $sasSarl;
         $this->siret = $siret;
     }
